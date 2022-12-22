@@ -2,7 +2,7 @@
 Simple discord bot created with the Discord.NET library. 
 
 # Work in progress:
-- Application Commands
+- Application Commands  (Slash-Commands)
 - Storing the discord bot token in a seperate .env file
 
 # Be aware that this bot uses .NET 7!
