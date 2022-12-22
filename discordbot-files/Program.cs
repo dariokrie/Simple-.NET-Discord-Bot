@@ -11,12 +11,12 @@ namespace discordbot
     {
         private DiscordSocketClient _client;
 
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
             new Program().MainAsync().GetAwaiter().GetResult();
         }
 
-        private async Task MainAsync()
+        public async Task MainAsync()
         {
             _client = new DiscordSocketClient();
 
