@@ -9,12 +9,12 @@ namespace discordbot
 {
     internal class Program
     {
+        private DiscordSocketClient _client;
+
         static void Main(string[] args)
         {
             new Program().MainAsync().GetAwaiter().GetResult();
         }
-
-        private DiscordSocketClient _client;
 
         public async Task MainAsync()
         {
