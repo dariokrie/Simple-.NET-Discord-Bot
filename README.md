@@ -2,7 +2,7 @@
 Simple discord bot created with the Discord.NET library. 
 
 # Work in progress:
-- A̶p̶p̶l̶i̶c̶a̶t̶i̶o̶n̶ ̶C̶o̶m̶m̶a̶n̶d̶s̶ ̶ ̶(̶S̶l̶a̶s̶h̶-̶C̶o̶m̶m̶a̶n̶d̶s̶)̶  (done in v2)
+- A̷p̷p̷l̷i̷c̷a̷t̷i̷o̷n̷ ̷C̷o̷m̷m̷a̷n̷d̷s̷ ̷(̷S̷l̷a̷s̷h̷-̷C̷o̷m̷m̷a̷n̷d̷s̷)̷  (done in v2)
 - Storing the discord bot token in a seperate .env file
 
 # Be aware that this bot uses .NET 7!
