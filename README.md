@@ -1,12 +1,22 @@
-# Simple-.NET-Discord-Bot
-Simple discord bot created with the Discord.NET library. 
+## Dotnet Discordbot Template
+- Based on a Console Application
+- Written in .NET 8
+- Enhanced with the library of Discord.Net 
 
-# Work in progress:
-- A̷p̷p̷l̷i̷c̷a̷t̷i̷o̷n̷ ̷C̷o̷m̷m̷a̷n̷d̷s̷ ̷(̷S̷l̷a̷s̷h̷-̷C̷o̷m̷m̷a̷n̷d̷s̷)̷  (done in v2)
-- Storing the discord bot token in a seperate .env file
+## Architecture
+10 Client (Client Layer)
+- Discord.Client
+	- Interfaces
+		-> Folder which containes interfaces for dependency injection
+	- Discord.Client.csproj
+		-> Project file of the discordbot template
+	- Program.cs
+		-> Entry point of the application
+	- Startup.cs
+		-> Contains the code for creating a discord bot
+		
+## Techstack
+- C# .NET8
 
-# Be aware that this bot uses .NET 7!
-
-# <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord Icon" width="30"/>   Support Discord
-### [Discord](https://dsc.gg/edulu)
-
+## Information
+Commits and coding history is tracked on github. The origin of this repository is GitHub Repositories.
