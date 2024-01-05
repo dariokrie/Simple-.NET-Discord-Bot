@@ -1,38 +1,28 @@
-﻿using Discord;
-using Discord.WebSocket;
-using Discord.Commands;
-using System.Threading.Tasks;
+﻿using Discord.Client.Interfaces;
 using Discord.Net;
+using Discord.WebSocket;
 using Newtonsoft.Json;
 
-namespace discordbot
+namespace Discord.Client
 {
-    internal class Program
+    public class Startup : IStartup
     {
         private DiscordSocketClient _client;
 
-        static void Main(string[] args)
-        {
-            new Program().MainAsync().GetAwaiter().GetResult();
-        }
-
-        public async Task MainAsync()
+        public async Task StartAsync()
         {
             _client = new DiscordSocketClient();
-
             _client.Log += Log;
 
-            await _client.LoginAsync(TokenType.Bot, "ENTER YOUR DISCORD BOT TOKEN HERE");
+            await _client.LoginAsync(TokenType.Bot, "<discord bot token>");
             await _client.StartAsync();
 
-            await _client.SetStatusAsync(UserStatus.DoNotDisturb);      // CAN BE SET TO ONLINE, IDLE, DND 
-            await _client.SetGameAsync("ENTER STATUS MESSAGE HERE");
+            await _client.SetStatusAsync(UserStatus.DoNotDisturb);
+            await _client.SetGameAsync("<optional: status message>");
 
             _client.Ready += Client_Ready;
             _client.SlashCommandExecuted += SlashCommandHandler;
 
-
-            // Block this task until the program is closed.
             await Task.Delay(-1);
         }
 
@@ -44,18 +34,17 @@ namespace discordbot
 
         private async Task Client_Ready()
         {
-            // guildId = Rightclick on server icon and click "Copy ID"
-            var guild = _client.GetGuild(guildId);   // replace guildId with your servers guildId
+            var guild = _client.GetGuild(/*add guildId as parameter here*/);
             var guildCommand = new SlashCommandBuilder();
             guildCommand.WithName("ping");
-
             guildCommand.WithDescription("Simple Ping Command");
 
             try
             {
                 await guild.CreateApplicationCommandAsync(guildCommand.Build());
             }
-            catch (ApplicationCommandException exception)
+
+            catch (HttpException exception)
             {
                 var json = JsonConvert.SerializeObject(exception.Errors, Formatting.Indented);
                 Console.WriteLine(json);
